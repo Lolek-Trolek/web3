@@ -4,7 +4,8 @@ import viteLogo from '../../../public/vite.svg'
 import './App.css'
 
 function App() {
-  
+  const title = "Click Counter";
+  const message = "You are a master in the art of clicking !";
   return (
     <>
       <div>
@@ -17,7 +18,7 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <Counter/>
+        <Counter title={title} message={message} />
         <p>
           Edit <code>src/App.jsx</code> and save to test HMR
         </p>
