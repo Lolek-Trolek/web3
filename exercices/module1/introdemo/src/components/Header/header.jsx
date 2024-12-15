@@ -1,6 +1,10 @@
+import logo from './LOGO HE VINCI.png';
 const Header = ({course}) => {
-    return (  
+    return (
+      <>
+      <img src={logo} alt=""/>
       <h1>{course}</h1>
+      </>
     );
   };
 
