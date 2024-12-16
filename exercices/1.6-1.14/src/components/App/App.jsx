@@ -1,5 +1,5 @@
 import { useState, useEffect} from 'react'
-import Bouton from '../Bouton/Bouton'
+import Bouton from '../Bouton/bouton'
 import Stats from '../Stats/stats'
 import Loading from '../Loading/loading'
 import './App.css'
