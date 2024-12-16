@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Bouton from '../Bouton/Bouton'
+import Stats from '../Stats/stats'
 import './App.css'
 
 const App = () => {
@@ -13,10 +14,7 @@ const App = () => {
       <Bouton onClick={()=>setGood(good+1)} text={"good"}/>
       <Bouton onClick={()=>setNeutral(neutral+1)} text={"neutral"}/>
       <Bouton onClick={()=>setBad(bad+1)} text={"bad"}/>
-      <h1>statistics</h1>
-      <p>good {good}</p>
-      <p>neutral {neutral}</p>
-      <p>bad {bad}</p>
+      <Stats good={good} neutral={neutral} bad={bad}/>
     </div>
   )
 }
