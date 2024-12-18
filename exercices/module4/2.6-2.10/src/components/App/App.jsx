@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import Numbers from 'components/Numbers/numbers'
+import Filter from 'components/Filter/PhoneFilter'
 
 const App = () => {
   const [persons, setPersons] = useState([
@@ -10,6 +11,7 @@ const App = () => {
   ]) 
   const [newName, setNewName] = useState('')
   const [newPhone, setNewPhone] = useState('')
+  const [filter, setFilter] = useState('')
 
   const handleNameChange = (event) => { 
     setNewName(event.target.value)
@@ -31,11 +33,15 @@ const App = () => {
     }
     setPersons(persons.concat(personObject))
     setNewName('')
+    setNewPhone('')
   }
 
   return (
     <div>
+
       <h2>Phonebook</h2>
+      <Filter filter={filter} setFilter={setFilter} />
+      <h2>Add a new</h2>
       <form onSubmit={addPerson}>
         <div>
           name: <input value={newName} onChange={handleNameChange} />
@@ -48,7 +54,7 @@ const App = () => {
       </form>
       <div>debugName: {newName}</div>
       <div>debugPhone: {newPhone}</div>
-      <Numbers persons={persons} />
+      <Numbers persons={persons} filter={filter} />
     </div>
   )
 }
