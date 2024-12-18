@@ -3,7 +3,10 @@ const Numbers = ({ persons }) => {
         <div>
         <h2>Numbers</h2>
         {persons.map(person => 
-            <p key={person.name}>{person.name}</p>
+            <div key={person.id}>
+                <p>{person.name}</p>
+                <p>{person.phone}</p>
+            </div>
         )}
         </div>
     );
