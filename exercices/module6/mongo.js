@@ -1,6 +1,5 @@
-const mongoose = require('mongoose');
-
 require('dotenv').config();
+const mongoose = require('mongoose');
 
 
 // Vérifie que le mot de passe est fourni
@@ -15,11 +14,16 @@ const name = process.argv[3];
 const number = process.argv[4];
 
 // URI pour se connecter à MongoDB (remplace `<password>` par ton mot de passe)
-const url = process.env.MONGO_URI;
+const url = process.env.MONGO_URI.replace('<password>', password);
 
 
 // Connexion à MongoDB
-mongoose.connect(url);
+mongoose.connect(url).then(() => {
+  console.log('Connected to MongoDB');
+}
+).catch((error) => {  
+  console.log('Error connecting to MongoDB:', error.message);
+});
 
 // Définir le schéma et le modèle
 const personSchema = new mongoose.Schema({
